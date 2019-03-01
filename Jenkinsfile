@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        kubernetes {
+          label 'test'
+          defaultContainer 'jnlp'
+        }
+    }
     stages {
         stage('Example - Test') {
             steps {
